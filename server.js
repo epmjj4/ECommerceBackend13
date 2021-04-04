@@ -1,10 +1,10 @@
-const express = require('expreess');
+const express = require('express');
 
 const exphbs = require('express-handlebars');
 
 const app = express();
 
-const routes = require('./controller/burger-control');
+const routes = require('./controllers/burger-control');
 
 const PORT = process.env.PORT || 8080;
 // Server can render static files from the "public" folder.

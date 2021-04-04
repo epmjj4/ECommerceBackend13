@@ -14,7 +14,7 @@ const orm = {
             callback(results);
         })
     },
-    // function to add burger to the db from inpu
+    // function to add burger to the db from input
     addOne: (tableName, column, value, callback) => {
         const querySelector = `INSERT INTO ${tableName} (${column}) VALUES ('${value}');`;
         connection.query(querySelector, (err, results) => {
@@ -24,6 +24,7 @@ const orm = {
             callback(results);
         })
     }, 
+    //function to update one burger
     updateOne: (columnVal, id, callback) => {
         const querySelector = `UPDATE burgers SET devoured ='1' WHERE ${columnVal}=${id};`;
         connection.query(querySelector, [id], (err, results) => {
@@ -35,7 +36,7 @@ const orm = {
     }
 };
 
-
+module.exports.orm
 
 
 

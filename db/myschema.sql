@@ -5,8 +5,8 @@ CREATE DATABASE IF NOT EXISTS burgershop_db;
 USE burgershop_db;
 
 CREATE TABLE burgers(
-id INTEGER NOT NULL AUTO_INCREMENT NOT
+id INTEGER NOT NULL AUTO_INCREMENT,
 burger_name VARCHAR(30) NOT NULL,
-devoured BOOLEAN default false,
+devoured BOOLEAN DEFAULT false,
 PRIMARY KEY(id)
 );

@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="jumbotron bg-primary text-white"><h1 class="display-4">Plain 'Ol Burger Bar</h1></div>
+    {{!-- place image here --}}
+  <p class="lead text-center">Come have the best burger that you'll ever have.</p>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card border border-primary">
+              <div class="car-header bg-primary text-white">
+                  May I please take your order?
+              </div>
+              {{!-- Create/Add Burger Form --}}
+              <div class="card-body">
+                  <form class="form-group" action="/insertOne" method="POST">
+                  <div class="form-group">
+                      <label for="burger">Please place your order here</label>
+                      <input type="text" class="from-control" name="burger_name" id="toGoBurger" placeholder="Please write order here">
+                  </div>
+                  <button class="btn btn-primary" type="submit">Place your order</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+{{!-- Section for devoured and non devoured burgers --}}
+
+<div class="row mt-4">
+    <div class="col-md-6 mt-4">
+        <div class="card border-info">
+            <div class="card-header bg-success text-white">
+                Burgers
+            </div>
+            {{!-- This card will hold the burger entries --}}
+            <div class="card-body">
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <p>{{this.burger_name}}</p>
+                <form action="/udateONe/{{this.id}}" method="POST">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <input type="hidden" name="devoured" value="1">
+                <button class="btn btn-outline-success" type="submit">Eat it!!!!</button>
+                </form>
+                <br>
+                {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 mt-4">
+    <div class="card border border-secondary devoured-card">
+        <div class="card-header bg-secondary text-white" id="devoured-card-header">Devoured Burgers</div>
+        {{!-- Card for devoured burgers --}}
+        <div class="card-body">
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <div class="devourBurger">
+                <p>
+                    {{this.burger_name}}
+                </p>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{!-- footer --}}
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <div class="card footer">
+            <div class="card-body footer-body text-white">
+                <h5 class="card-title text-white">Eat it Burger!</h5>
+                <p class="card-text">Welcome to Plain 'Ol Burger Bar</p>
+                <a href="https://github.com/epmjj4/ECommerceBackend13" class="btn btn-primary mr-2" target="_blank">Github Repo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
