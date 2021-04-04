@@ -1,5 +1,5 @@
 //Import MySql connection object
-const connection = require('./connection');
+const connection = require('./mysql-connection');
 
 // variable to set object realtional mapping(orm)
 
@@ -36,7 +36,7 @@ const orm = {
     }
 };
 
-module.exports.orm
+module.exports = orm
 
 
 

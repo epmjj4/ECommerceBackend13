@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 // POST REQUEST inserting a burger into the database from user input. 
 
 router.post('/insertOne', (req, res) => {
-burger.insertOne(req.body.burger_name,  (addon) =>{
+burger.addOne(req.body.burger_name,  () =>{
 res.redirect('/');
 }) 
 })
@@ -27,3 +27,4 @@ router.post('/updateOne/:id', (req, res) => {
         res.redirect('/');
     })
 })
+module.exports = router;

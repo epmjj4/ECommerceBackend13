@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 //parse the body of the application
 
-app.use(express.urlencoded({ extended: ture}));
+app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 // Set Handlebars as the default templating engine.
