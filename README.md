@@ -10,7 +10,7 @@ https://epmjj4.github.io/ECommerceBackend13/.
 
 # heroku-deployed-link
 
-https://fast-shore-71433.herokuapp.com/
+https://ecommerce-burger-13.herokuapp.com/
 
 # ECommerceBackend13-Screenshot
 
